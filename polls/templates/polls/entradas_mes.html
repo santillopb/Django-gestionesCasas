@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+{% block title %}miblog|{{ month|date:"F" }}{% endblock %}
+
+{% block content %}
+    <h2>  Entradas del Mes de {{ month|date:"F" }} <h2>
+{% for entrada in entradas %}
+
+    {% ifchanged %} <h3> {{entrada.fecha|date:"Y/m/d"}}</h3>{% endifchanged %}
+
+    <li> {{ forloop.counter }} {{entrada.user}}<a href="{{entrada.get_absolute_url }}">
+{{ entrada }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

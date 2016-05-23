@@ -1,0 +1,9 @@
+<h1>{{ cases.localitat }}</h1>
+
+<ul>
+{% for persona in cases.persona_set.all %}
+    <li>{{ persona.nom }} -- {{ persona.cognoms }} </li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' cases.id %}">Vote again?</a>

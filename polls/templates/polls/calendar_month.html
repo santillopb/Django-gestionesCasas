@@ -1,0 +1,14 @@
+{% extends "polls/base.html" %}
+
+{% block title %} Xats d'aquest mes {{ month }} {% endblock %}
+	
+{% block content %}
+	<h1>Xats d'aquest mes: {{month}} de l'any {{year}}</h1>
+	{% if xats %}
+		{% for xat in xats %}
+			[{{ xat.date_sent }}] {{ xat.user }}: {{ xat.text }}<br>
+		{% endfor %}
+	{% endif %}
+<a href="{% url 'polls:xat' %}">Tornar a Xats</a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<html>
+<head>
+	<title>User Detail</title>
+</head>
+<body>
+	<h1>Nom d'usuari: {{ user.username }}</h1>
+	<h2>Historial de missatges</h2>
+	{% for xat in user.xat_set.all %}
+		[{{ xat.date_sent }}] {{ xat.user }}: {{ xat.text }}<br>
+	{% endfor %}
+</body>
+</html>

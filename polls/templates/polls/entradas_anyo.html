@@ -1,0 +1,25 @@
+{% extends 'polls/base.html' %}
+{% block title %}miblog|{{ year }}{% endblock %}
+
+
+{% block content %}
+
+    <h3> Entradas del año:
+
+{% for entrada in entradas %}
+
+    {% ifchanged %}{{entrada.fecha|date:"Y"}}</h3>{% endifchanged %}
+
+   <li> {{ forloop.counter }} {{entrada.user}}: <a href="{{entrada.get_absolute_url }}">
+{{ entrada }}</a></li>
+{% endfor %}
+   </ul>
+{% if entradas %}
+	{{year}}
+
+{% endif %}
+{% endblock %}
+{% block aside %}
+
+  
+{% endblock %}

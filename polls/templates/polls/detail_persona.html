@@ -1,0 +1,29 @@
+{% extends 'polls/base.html' %}
+{% load staticfiles %}
+{% block title %}Factures de {{persones}} {% endblock %}
+{% block content %}
+	<a href="/polls/persona/{{persones.id}}/factura">Factures</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persones.id}}/blog">Notes</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persones.id}}/btc_address">Adressa bitcoin</a>
+	<a id="factura" href="/polls/factura/{{persones.id}}/insercio">Inserir factura</a>
+	<h1>Factures de {{persones}}</h1>
+	
+	<table border=1>
+		<tr>
+			<th>Num. Factura</th>
+			<th>Imatge Factura</th>
+			<th>Preu</th>
+			<th>Data</th>
+		</tr>
+	{% for factura in persones.factura_set.all %}
+			<tr>
+				<td>{{ forloop.counter }}</td>
+				<td><img class="imgFac" src="/media/{{factura.image}}"/></td>
+				{{factura.image}}
+				<td>{{factura.preu}} €</td>
+				<td>{{factura.pub_date}}</td>
+			</tr>
+			
+	{% endfor %}
+	</table>
+{% endblock %}

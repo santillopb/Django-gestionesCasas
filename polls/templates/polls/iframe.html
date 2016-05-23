@@ -1,0 +1,5 @@
+{% if xats %}
+	{% for xat in xats %}
+		<p>[{{xat.date_sent}}] {{xat.user}}: {{xat.text}}</p>
+	{% endfor %}
+{% endif %}

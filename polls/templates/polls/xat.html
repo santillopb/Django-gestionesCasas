@@ -1,0 +1,30 @@
+{% extends "polls/base.html" %}
+{% block title %}Xats{% endblock %}
+{% block h1 %}Xats{% endblock %}
+{% block content %}
+	
+	<h2>Historial de Xats</h2>
+	
+	{% if xats %}
+		{% for xat in xats %}
+			<li>[{{ xat.date_sent }}] {{ xat.user }}: {{ xat.text }} </li><br>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+{% block aside %}
+	{% if user.is_authenticated %}
+		&nbsp;<a href="{% url 'polls:users' %}">Contactes</a>
+		<form action="{% url 'polls:xat' %}" method="post">{% csrf_token %}
+		<iframe src="{% url 'polls:iframe' %}"></iframe>
+		{{ form.as_p }}
+		<input type="submit" value="Submit" />
+		</form>
+	{% endif %}
+	
+{% endblock %}
+{% block navinf %}
+	<a href="/polls/nota2/{{year}}">Xats d'enguany</a>&nbsp|&nbsp
+	<a href="/polls/calendar_month/{{year}}/{{month}}">Xats d'aquest mes</a>
+	&nbsp|&nbsp
+	<a href="{% url 'search' %}">Consulta xats per data</a>
+{% endblock %}

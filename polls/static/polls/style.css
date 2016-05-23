@@ -1,0 +1,104 @@
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);*/
+ @font-face {
+      font-family: "Open Sans";
+      src: url("tipografies/Open_Sans/OpenSans-LightItalic.ttf");
+    }
+  @font-face {
+      font-family: "font1";
+      src: url("tipografies/Open_Sans/OpenSans-Semibold.ttf");
+    }
+h1{
+	text-align : center;
+	color : gold;
+}
+.cursiva{
+   font-family: Open Sans;
+}
+.negreta{
+	font-family: font1;
+}
+ul a {
+    color: green;
+    letter-spacing : 2px;
+    text-transform : uppercase;
+}
+a#factura{
+  float: right;
+}
+body{
+	background: silver;
+}
+#navinf{
+  clear: both;
+}
+#cases{
+  width:700px;
+}
+#persona{
+  width:700px;
+  height: 400px;
+  border: 1px solid;
+}
+.imgFac{
+  width: 300px;
+  height: 500px;
+}
+section{
+  border: 0px solid gold;
+	margin : auto;
+	width : 700px;
+  float:left;
+}
+
+#wrapper{
+  width: 700px;
+  border: 0px solid;
+  margin: auto;
+}
+aside{
+	border: 0px solid gold;
+	margin : auto;
+	width : 250px;
+	padding: 5px;
+  float: left;
+}
+footer{
+  padding-top: 10px;
+  clear: both;
+  text-align: right;
+}
+aside textarea{
+    border: 1px solid gold;
+	margin : auto;
+	width : 250px;
+	height: 100px;;
+	
+}
+textarea#texto{
+  margin-top: 10px;
+  height: 30px;
+}
+input[type=submit]{
+  background-color: red;
+  float : right;
+  margin-right: 70px;
+}
+
+@media (max-width: 700px) {
+  h1{
+    color : orange;
+  }
+  body{
+     max-width: 500px;
+    background: darkblue;
+    color : white
+  }
+  ul a {
+    color: lightgreen;
+  }
+  section {
+        max-width: 400px;
+}
+}
+
+

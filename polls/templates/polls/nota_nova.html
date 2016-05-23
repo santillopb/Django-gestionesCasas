@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+{% block title %} Nota nova {% endblock %}
+{% block h1 %} Afegir nota {% endblock %}
+{% block content %}
+<a href="/polls/persona/{{persona.id}}/factura">Factures</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persona.id}}/blog">Notes</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persona.id}}/btc_address">Adreça bitcoin</a>
+
+
+{{persona.nom}}
+{{message}}
+<form action="" method="post">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+  </form>
+{% endblock %}

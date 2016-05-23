@@ -1,0 +1,26 @@
+{% extends "polls/base.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+{% block title %}Persones{% endblock %}
+{% block content %}
+
+<h1> Persones que viuen en {{ cases.localitat }} </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+
+{% for persona in cases.persona_set.all %}
+    
+    	 <li><span class="negreta"><a href="/polls/persona/{{persona.id}}/blog" title="blog">{{ persona.nom }} {{ persona.cognoms }} </span></a>{{persona.btc_address}}</li> <br>
+    
+{% endfor %}
+{% if latest_users_list %}
+		{% for users in latest_users_list %}
+    		<span class="negreta"></div>-{{ users.username }} {{ users.username }}</a></span> <br>
+    	{% endfor %}
+	{% endif %}	
+
+
+{% endblock %}
+

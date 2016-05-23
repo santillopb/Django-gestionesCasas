@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+{% block title %}miblog|{{ day|date }}{% endblock %}
+
+{% block content %}
+    <h3> Entradas del día:
+
+{% for entrada in entradas %}
+
+    {% ifchanged %}{{entrada.dateField|date:"d  M  Y"}}</h3>{% endifchanged %}
+    <ul>
+    <li> {{ forloop.counter }} {{entrada.user}}: <a href="{{entrada.get_absolute_url }}">{{ entrada }}</a></li></ul>
+    {% endfor %}
+    
+
+{% endblock %}

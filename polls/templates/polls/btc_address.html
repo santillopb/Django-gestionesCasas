@@ -1,0 +1,13 @@
+{% extends 'polls/base.html' %}
+{% block title %}Bienvenidos a MiBlog {% endblock %}
+{{year}}
+{% block content %}
+<a href="/polls/persona/{{persona.id}}/factura">Factures</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persona.id}}/blog">Notes</a>&nbsp|&nbsp
+<a href="/polls/persona/{{persona.id}}/btc_address">Adreça bitcoin</a>
+<h2>{{persona.nom}}</h2>
+Adressa bitcoin: {{persona.btc_address}}
+{% endblock %}
+{% block aside %}
+  
+{% endblock %}

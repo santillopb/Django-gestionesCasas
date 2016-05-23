@@ -1,0 +1,10 @@
+{% extends "polls/base.html" %}
+{% block title %} Xats {{ year }} {% endblock %}
+{% block content %}
+<h1>Xats d'enguany {{ year }}</h1>
+{% if xats %} 
+	{% for xat in xats %}
+		[{{ xat.date_sent }}] {{ xat.user }}: {{ xat.text }}  <br>
+	{% endfor %}
+{% endif %}
+{% endblock %}

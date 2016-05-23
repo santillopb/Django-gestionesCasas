@@ -1,0 +1,46 @@
+{% extends "polls/base.html" %}
+
+
+{% block title %} Login {% endblock %}
+
+{% block h1 %}Entropy{% endblock %}
+
+{% block aside %} 
+	<h2>Login</h2>
+	{% if message %}
+	<b>{{message}}</b>
+	{% endif %}	
+	<!--div id="info">M�ximo 100 caracteres</div>
+		<textarea id="missatges" readonly=""></textarea-->
+	<!--form action="{% url 'xat' %}" method="post">{% csrf_token %}
+		
+		<label for="texto">{{ user.username }}: </label>
+		<textarea id="texto" onkeypress="return limita(event, 100);" 
+			onkeyup="actualizaInfo(100)" rows="6" cols="30" onfocus>
+		</textarea>
+		<button onclick="pegar()">Enviar</button>
+	</form-->
+		
+	
+	
+		
+	{% if user.is_authenticated %}
+		&nbsp;<a href="{% url 'polls:users' %}">Contactes</a>
+		<form action="{% url 'xat' %}" method="post">{% csrf_token %}
+		<iframe src="{% url 'polls:iframe' %}"></iframe>
+		{{ formChat.as_p }}
+		<input type="submit" value="Submit" />
+		</form>
+		
+		
+	{% else %}
+		<form action="" method="post">{% csrf_token %}
+		{{ formLogin.as_p }}
+		<input type="submit" value="Submit" />
+		</form>
+		<p>No esta logueado</p>
+	{% endif %}
+
+{% endblock %}
+
+

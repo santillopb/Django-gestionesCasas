@@ -1,0 +1,25 @@
+{% extends "polls/base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block h1 %} Cases d'Entropy {% endblock %}
+
+{% block content %}
+<div id="cases">		
+		{% if latest_cases_list %}
+
+			<ul>
+			{% for cases in latest_cases_list %}
+				<li><a href="{% url 'polls:detail' cases.id %}"> {{ cases.localitat }} </a>
+				 <span class="negreta">&nbsp;&nbsp;Direcci&oacute;: {{ cases.adressa }} </span>
+				 &nbsp;&nbsp;<span class="cursiva">Creat el {{ cases.pub_date }}<span></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No polls are available.</p>
+		{% endif %}
+</div>		
+{% endblock %}
+
+
+			
+
